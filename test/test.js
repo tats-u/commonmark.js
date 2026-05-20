@@ -260,6 +260,13 @@ for (x = 1000; x <= 10000; x *= 10) {
 }
 for (x = 1000; x <= 10000; x *= 10) {
     cases.push({
+        name: x + " internal spaces before final text",
+        input: "a" + repeat(" ", x) + "b",
+        expected: "<p>a" + repeat(" ", x) + "b</p>\n"
+    });
+}
+for (x = 1000; x <= 10000; x *= 10) {
+    cases.push({
         name: x + " pattern [ (](",
         input: repeat("[ (](", x),
         expected: "<p>" + repeat("[ (](", x) + "</p>\n"
